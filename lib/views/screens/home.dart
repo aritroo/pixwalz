@@ -10,43 +10,57 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        centerTitle: true,
-        title: CustomAppBar(
-          word1: 'Pix',
-          word2: 'Walz',
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          centerTitle: true,
+          title: CustomAppBar(
+            word1: 'Pix',
+            word2: 'Walz',
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 3.w),
-              child: SearchB(),
-            ),
-            SizedBox(
-              height: 4.h,
-            ),
-            SizedBox(
-              height: 9.h,
-              width: 100.w,
-              child: ListView.builder(
-                  itemCount: 20,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return CatB();
-                  }),
-            ),
-            SizedBox(
-              height: 2.h,
-            ),
-            Container(
+        body: NestedScrollView(
+            floatHeaderSlivers: true,
+            headerSliverBuilder: (context, innerBoxIsScrolled) {
+              return [
+                SliverAppBar(
+                  backgroundColor: Colors.white,
+                  floating: true,
+                  // snap: true,
+                  // pinned: true,
+                  collapsedHeight: 22.h,
+                  bottom: PreferredSize(
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 3.w),
+                            child: SearchB(),
+                          ),
+                          SizedBox(
+                            height: 4.h,
+                          ),
+                          SizedBox(
+                            height: 9.h,
+                            width: 100.w,
+                            child: ListView.builder(
+                                itemCount: 20,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return CatB();
+                                }),
+                          ),
+                          SizedBox(
+                            height: 2.h,
+                          )
+                        ],
+                      ),
+                      preferredSize: Size.fromHeight(0.h)),
+                )
+              ];
+            },
+            body: Container(
               height: 100.h,
-              margin: EdgeInsets.symmetric(
-                horizontal: 2.w,
-              ),
+              margin: EdgeInsets.only(bottom: 2.w, left: 2.w, right: 2.w),
               child: GridView.builder(
                 physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -70,10 +84,6 @@ class HomeScreen extends StatelessWidget {
                       ),
                     )),
               ),
-            )
-          ],
-        ),
-      ),
-    );
+            )));
   }
 }

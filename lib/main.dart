@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pixwalz/views/screens/category.dart';
 import 'package:pixwalz/views/screens/home.dart';
+import 'package:pixwalz/views/screens/search.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: CategoryScreen(),
+          home: HomeScreen(),
         );
       },
     );
