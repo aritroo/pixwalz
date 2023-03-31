@@ -4,8 +4,8 @@ import 'package:pixwalz/views/widgets/customAppBar.dart';
 import 'package:pixwalz/views/widgets/searchBar.dart';
 import 'package:sizer/sizer.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +22,47 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 3.w),
-              child: SearchB(),
+            Stack(
+              children: [
+                Image.network(
+                  "https://images.pexels.com/photos/1535162/pexels-photo-1535162.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                  height: 14.h,
+                  width: 100.w,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  height: 14.h,
+                  width: 100.w,
+                  color: Colors.black38,
+                ),
+                Positioned(
+                  left: 33.w,
+                  top: 3.h,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Category',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Mountains',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             SizedBox(
-              height: 4.h,
-            ),
-            SizedBox(
-              height: 9.h,
-              width: 100.w,
-              child: ListView.builder(
-                  itemCount: 20,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return CatB();
-                  }),
-            ),
-            SizedBox(
-              height: 2.h,
+              height: 1.h,
             ),
             Container(
               height: 100.h,
