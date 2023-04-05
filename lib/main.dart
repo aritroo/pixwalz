@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pixwalz/views/screens/home.dart';
-import 'package:pixwalz/views/screens/search.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {

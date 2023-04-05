@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pixwalz/views/screens/search.dart';
 import 'package:sizer/sizer.dart';
 
 class SearchB extends StatelessWidget {
-  const SearchB({super.key});
+  SearchB({super.key});
 
+  final TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +20,7 @@ class SearchB extends StatelessWidget {
         children: [
           Expanded(
             child: TextField(
+              controller: _searchController,
               decoration: InputDecoration(
                 hintText: 'Search Wallpapers',
                 errorBorder: InputBorder.none,
@@ -31,7 +34,13 @@ class SearchB extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              print('Searching...');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      SearchScreen(query: _searchController.text),
+                ),
+              );
             },
             child: Icon(
               Icons.search,
