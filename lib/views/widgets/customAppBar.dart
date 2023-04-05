@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           children: [
             TextSpan(
-              text: ' $word2',
+              text: '$word2',
               style: TextStyle(
                 color: Colors.blue,
                 fontSize: 25,

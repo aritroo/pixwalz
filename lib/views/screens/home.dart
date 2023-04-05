@@ -22,8 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   GetCatDetails() async {
     CatModList = await ApiController.getCategoriesList();
-    print("Getting Cat Mod List");
-    print(CatModList);
+    // print("Getting Cat Mod List");
+    // print(CatModList);
     setState(() {
       CatModList = CatModList;
     });
@@ -139,10 +139,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Container(
                                 height: 14.h,
                                 width: 30.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.amberAccent,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: Image.network(

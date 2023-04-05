@@ -88,10 +88,6 @@ class _SearchScreenState extends State<SearchScreen> {
                                 child: Container(
                                   height: 14.h,
                                   width: 30.w,
-                                  decoration: BoxDecoration(
-                                    color: Colors.amberAccent,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
                                     child: Image.network(
