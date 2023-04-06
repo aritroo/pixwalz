@@ -54,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
           word1: 'Pix',
           word2: 'Walz',
         ),
+        automaticallyImplyLeading: false,
       ),
       body: isLoading
           ? Center(

@@ -46,6 +46,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
           word1: 'Pix',
           word2: 'Walz',
         ),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: isLoading
           ? Center(

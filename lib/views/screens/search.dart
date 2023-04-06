@@ -43,6 +43,12 @@ class _SearchScreenState extends State<SearchScreen> {
           word1: 'Pix',
           word2: 'Walz',
         ),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black,
+        ),
       ),
       body: isLoading
           ? Center(
