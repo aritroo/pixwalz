@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:typed_data';
 
+import 'package:async_wallpaper/async_wallpaper.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -62,6 +63,29 @@ class _FullScreenState extends State<FullScreen> {
     }
   }
 
+  Future<void> _setWallpaper() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    var response = await Dio().get(
+      widget.imgUrl,
+      options: Options(responseType: ResponseType.bytes),
+    );
+
+    final result = await AsyncWallpaper.setWallpaper(
+      url: _localPath,
+      wallpaperLocation: AsyncWallpaper.HOME_SCREEN,
+      toastDetails: ToastDetails.success(),
+      errorToastDetails: ToastDetails.error(),
+      goToHome: false,
+    );
+
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +98,13 @@ class _FullScreenState extends State<FullScreen> {
                   heroTag: 'btn1',
                   onPressed: _saveImage,
                   child: Icon(Icons.download),
+                ),
+                SizedBox(
+                  width: 3.w,
+                ),
+                FloatingActionButton(
+                  onPressed: _setWallpaper,
+                  child: Icon(Icons.wallpaper),
                 ),
               ],
             ),
