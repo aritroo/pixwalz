@@ -28,8 +28,8 @@ class ApiController {
       final _random = new Random();
       PhotosModel photoModel =
           (await searchWallpapers(catName))[0 + _random.nextInt(5 - 0)];
-      print("IMG SRC IS HERE");
-      print(photoModel.imgSrc);
+      // print("IMG SRC IS HERE");
+      // print(photoModel.imgSrc);
       categoryModelList
           .add(CategoryModel(catImgUrl: photoModel.imgSrc, catName: catName));
     });
