@@ -11,7 +11,8 @@ class ApiController {
   static List<CategoryModel> categoryModelList = [];
 
   static String _apiKey =
-      "gTq0yXfUcvMBmANNS1bwyuWU6xdFXjWyrlApEHTPwdxk6kZqoxHYTVad";
+      "";//for API Key create your account in pexels.com and generate your new api key
+         //and replace it in the string variable "_apiKey".
 
   static List<CategoryModel> getCategoriesList() {
     List categoryName = [
