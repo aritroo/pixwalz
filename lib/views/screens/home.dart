@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Hero(
                               tag: trendingWallList[index].imgSrc,
                               child: Container(
-                                height: 14.h,
+                                height: 15.h,
                                 width: 30.w,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
